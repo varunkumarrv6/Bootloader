@@ -89,7 +89,7 @@ flowchart LR
   D -- yes --> E[Cleanup, set VTOR, jump]
   E --> F[App SystemInit sets VTOR = 0x08020400]
   F --> G[App wakes CM4, LEDs toggle]
-  D -- no --> H[Print "No valid application", loop in bootloader]
+  D -- no --> H["Print 'No valid application', loop in bootloader"]
 ```
 
 1. Reset: the CM7 starts at `0x08000000` with the bootloader vector table, and the CM4 waits in STOP.
@@ -189,7 +189,7 @@ Not included here: the relocated Lab 1 application (CM7 + CM4), the terminal scr
 
 ## Build and run
 
-1. Build `app/CM7` and `app/CM4`, and build `bootloader/CM7`.
+1. Build `bootloader_lab4/CM7`, and build the relocated Lab 1 application (CM7 and CM4, not included in this repository).
 2. Flash the bootloader at `0x08000000`, the CM7 app at `0x08020400`, and the CM4 app at `0x08100000`.
 3. Open a terminal (115200 8N1) on the ST-LINK COM port and press reset.
 
