@@ -112,12 +112,28 @@ Jumping to application
 - The application ran after the jump and the LED toggled.
 - `.isr_vector` is at `0x08000000` in the bootloader map and at `0x08020400` in the app map.
 
+### On the board
+
+After reset the bootloader prints its banner and UID and jumps, and the application runs on the NUCLEO-H755ZI-Q (the green and red LEDs next to the "User LEDs" label are on in the photo).
+
+<p align="center">
+  <img src="docs/images/board_leds_after_jump.jpg" width="640" alt="NUCLEO-H755ZI-Q with LEDs lit after the bootloader jumped to the application">
+  <br><sub>The board with the application running after the jump.</sub>
+</p>
+
+<p align="center">
+  <img src="docs/images/lab4_led_after_jump.gif" width="520" alt="Looping clip of the board LEDs after reset">
+  <br><sub>Short loop cut from the demo video. The full video (79 s, phone recording of the laptop and then the board; the board is shown from about 1:05) is in <a href="docs/media/lab4_demo_full.mp4">docs/media/lab4_demo_full.mp4</a>.</sub>
+</p>
+
 ## Repository contents
 
 - `bootloader_lab4/`: bootloader project (CubeIDE/CubeMX; CM7 is the bootloader, CM4 is CubeMX's empty stub)
 - `docs/bootloader_CM7.map`: linker map of the bootloader (`.isr_vector` at `0x08000000`)
+- `docs/images/`: lecture figures, the board photo and the short LED clip
+- `docs/media/lab4_demo_full.mp4`: full demo video
 
-Not included here: the relocated Lab 1 application (CM7 + CM4), the terminal screenshot and the demo video.
+Not included here: the relocated Lab 1 application (CM7 + CM4) and the terminal screenshot.
 
 ## Issues faced and how I solved them
 
